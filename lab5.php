@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +10,12 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Lab No. 5</title>
 </head>
+
 <body>
-<div class="container-fluid">
+    <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="#">Clark College Aboretum</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -50,88 +51,69 @@
                     campus today and for many years to come.</p>
         </div>
     </div>
+    <?php
+    $flag = false; // setting accumulator
+    if (isset($_GET["aralia"])) { // checks to make sure aralia is set
+        if ($_GET["aralia"] == "yes") { // checks to see if aralia=yes
+            $flag = true; // sets accumulator to true
+        } else {
+            if ($_GET['aralia'] == "no") { // if aralia=no sets accumulator to false
+                $flag = false;
+            }
+        }
+    }
+    if (!isset($_GET["aralia"])) { // if aralia isn't set sets accumulator to true
+        $flag = true;
+    }
 
-    <div class="container-fluid mt-3">
-        <h3 class="text-white p-3 shadow">Aralia</h3>
-        <div class="row mb-3">
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="card mt-3 mb-3 shadow">
-                    <div class="card-header align-leff">
-                        <a href="https://www.google.com/maps/search/?api=1&query=45.63472,-122.6500">Castor Aralia
-                        </a>
-                    </div>
-                    <img class="card-img-top" src="img/trees/castor_aralia.jpg" alt="Kalopanax pictus">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Common Genus:</strong> Aralia<br>
-                            <strong>Botanical Name:</strong> <em>Kalopanax pictus</em></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    if ($flag == true) { // checks the accumulator, if it's true display include file
+        include "inc/aralia.inc.html";
+    }
+    ?>
 
-        <h3 class="p-3 shadow">Arborvitae</h3>
-        <div class="row mb-3">
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="card mt-3 mb-3 shadow">
-                    <div class="card-header shadow">
-                        <a href="https://www.google.com/maps/search/?api=1&query=45.63472,-122.65247">American
-                            Arborvitae</a>
-                    </div>
-                    <img class="card-img-top" src="img/trees/evergreen48.jpg" alt="occidentalis">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Common Genus:</strong> Arborvitae<br>
-                            <strong>Botanical Name:</strong> <em>occidentalis</em></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <?php
+    if (isset($_GET["arborvitae"])) { // checks to make sure aroborvitae is set
+        if ($_GET["arborvitae"] == "yes") { // checks to see if aroborvitae=yes
+            $flag = true; // sets accumulator to true
+        } else {
+            if ($_GET['arborvitae'] == "no") { // if aroborvitae=no sets accumulator to false
+                $flag = false;
+            }
+        }
+    }
+    if (!isset($_GET["arborvitae"])) { // if aroborvitae isn't set sets accumulator to true
+        $flag = true;
+    }
 
-        <h3 class="p-3 shadow">Ash</h3>
-        <div class="row mb-3">
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="card mt-3 mb-3 shadow">
-                    <div class="card-header shadow">
-                        <a href="https://www.google.com/maps/search/?api=1&query=45.635857,-122.652392">Rose Hill Ash</a>
-                    </div>
-                    <img class="card-img-top" src="img/trees/deciduous33.jpg" alt="americana">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Common Genus:</strong> Ash<br>
-                            <strong>Botanical Name:</strong> <em>americana</em></p>
-                    </div>
-                </div>
-            </div>
+    if ($flag == true) { // checks the accumulator, if it's true display include file
+        include "inc/arborvitae.inc.html";
+    }
+    ?>
 
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="card mt-3 mb-3 shadow">
-                    <div class="card-header shadow">
-                        <a href="https://www.google.com/maps/search/?api=1&query=45.63591,-122.65031">Raywood Ash</a>
-                    </div>
-                    <img class="card-img-top" src="img/trees/deciduous34.jpg" alt="angustifolia">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Common Genus:</strong> Ash<br>
-                            <strong>Botanical Name:</strong> <em>angustifolia</em></p>
-                    </div>
-                </div>
-            </div>
+    <?php
 
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="card mt-3 mb-3 shadow">
-                    <div class="card-header shadow">
-                        <a href="https://www.google.com/maps/search/?api=1&query=45.635541,-122.649899">Oregon Ash</a>
-                    </div>
-                    <img class="card-img-top" src="img/trees/deciduous35.jpg" alt="latifolia">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Common Genus:</strong> Ash<br>
-                            <strong>Botanical Name:</strong> ∏<em>latifolia</em></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-</div>
+    if (isset($_GET["ash"])) { // checks to make sure ash is set
+        if ($_GET["ash"] == "yes") { // checks to see if ash=yes
+            $flag = true; // sets accumulator to true
+        } else {
+            if ($_GET['ash'] == "no") { // if ash=no sets accumulator to false
+                $flag = false;
+            }
+        }
+    }
+    if (!isset($_GET["ash"])) { // if ash isn't set sets accumulator to true
+        $flag = true;
+    }
 
-<!-- jQuery -->
-<script src="js/jquery-3.3.1.min.js"></script>
-<!-- Bootstrap JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+    if ($flag == true) { // checks the accumulator, if it's true display include file
+        include "inc/ash.inc.html";
+    }
+
+    ?>
+    <!-- jQuery -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
 </body>
+
 </html>
